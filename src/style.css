@@ -43,7 +43,7 @@ input {
 }
 
 .recent-score-rec {
-  display: flex; 
+  display: flex;
 }
 
 .recent-score-rec h2 {
@@ -81,7 +81,7 @@ input {
 
 .add-score {
   width: 400px;
-  margin-left: 30px;
+  margin-left: 120px;
 }
 
 .add-form {
@@ -93,8 +93,4 @@ input {
 
 .submit-btn {
   align-self: flex-end;
-}
-
-.add-score {
-  margin-left: 120px;
 }
