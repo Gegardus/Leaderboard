@@ -1,4 +1,4 @@
-import "./style.css";
+import './style.css';
 import renderData from './module/get.js';
 import recieveData from './module/post.js';
 
@@ -18,5 +18,3 @@ refreshBtn.addEventListener('click', () => {
 
 renderData();
 recieveData();
-
-

@@ -10,7 +10,7 @@ async function postData(user, score) {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    }
+    },
   );
   const json = await response.json();
   return json;

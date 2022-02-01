@@ -1,6 +1,6 @@
 async function getData() {
   const response = await fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/V0CCIRddQzFzK6uRfVbe/scores'
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/V0CCIRddQzFzK6uRfVbe/scores',
   );
   const json = await response.json();
   return json;
