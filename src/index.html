@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaderboard</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+  </head>
+  <body>
+    <!-- #### main-section #### -->
+    <main>
+      <h1>Leaderboard</h1>
 
-  <!-- #### main-section #### -->
-  <main>
-    <h1>Leaderboard</h1>
-
-    <!-- #### main-container #### -->
-    <section class="main-section">
-
-      <!-- #### recent-score-section #### -->
-      <div class="recent-score">
-        <div class="recent-score-rec">
-          <h2>Recent Scores</h2>
-          <button class="refresh-btn" type="button">Refresh</button>
-        </div>
-        <div class="recent-score-div">
-          <ul class="score-list">
-            <li class="score">Vahan 100</li>
+      <!-- #### main-container #### -->
+      <section class="main-section">
+        <!-- #### recent-score-section #### -->
+        <div class="recent-score">
+          <div class="recent-score-rec">
+            <h2>Recent Scores</h2>
+            <button class="refresh-btn" type="button">Refresh</button>
+          </div>
+          <div class="recent-score-div">
+            <ul class="score-list">
+              <!-- <li class="score">Vahan 100</li>
             <li class="score">Ani 120</li>
             <li class="score">Lidia 90</li>
-            <li class="score">Martuni 50</li>
-          </ul>
+            <li class="score">Martuni 50</li> -->
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- #### add-score-section #### -->
-      <div class="add-score">
-        <h2>Add your score</h2>
-        <form class="add-form"> 
-          <input type="text" name="your-name" placeholder="Your name">
-          <input type="text" name="your-score" placeholder="Your score">
-          <button class="submit-btn" type="button">Submit</button>
-        </form>
-      </div>
-    </section>
-  </main>
-</body>
+        <!-- #### add-score-section #### -->
+        <div class="add-score">
+          <h2>Add your score</h2>
+          <form class="add-form">
+            <input
+              type="text"
+              name="your-name"
+              placeholder="Your name"
+              required
+            />
+            <input
+              type="number"
+              name="your-score"
+              placeholder="Your score"
+              required
+              max="500"
+            />
+            <button class="submit-btn" type="submit">Submit</button>
+          </form>
+          <p class="msg"></p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
