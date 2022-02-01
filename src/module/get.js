@@ -1,4 +1,4 @@
-async function getData() {
+const getData = async () => {
   const response = await fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/V0CCIRddQzFzK6uRfVbe/scores',
   );

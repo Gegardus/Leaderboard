@@ -1,4 +1,4 @@
-async function postData(user, score) {
+const postData = async (user, score) => {
   const response = await fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/V0CCIRddQzFzK6uRfVbe/scores/',
     {
@@ -12,6 +12,7 @@ async function postData(user, score) {
       },
     },
   );
+  
   const json = await response.json();
   return json;
 }
