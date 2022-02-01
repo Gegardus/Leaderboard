@@ -4,7 +4,7 @@ const getData = async () => {
   );
   const json = await response.json();
   return json;
-}
+};
 
 export default () => {
   const list = document.querySelector('.score-list');

@@ -12,10 +12,10 @@ const postData = async (user, score) => {
       },
     },
   );
-  
+
   const json = await response.json();
   return json;
-}
+};
 
 export default () => {
   const msg = document.querySelector('.msg');
