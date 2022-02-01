@@ -126,7 +126,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n// Implement the \"Refresh\" button (receiving data from the API and parsing the JSON)\n\nconst refreshBtn = document.querySelector('.refresh-btn');\n\nrefreshBtn.addEventListener('click', () => {\n    const list = document.querySelector('.score-list');\n\n    while(list.firstChild) {\n        list.removeChild(list.firstChild);\n    }\n\n    const msg = document.querySelector('.msg');\n\n    msg.innerHTML = '';\n});\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_get_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/get.js */ \"./src/module/get.js\");\n/* harmony import */ var _module_post_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/post.js */ \"./src/module/post.js\");\n\n\n\n\n// Implement the \"Refresh\" button (receiving data from the API and parsing the JSON)\n\nconst refreshBtn = document.querySelector('.refresh-btn');\n\nrefreshBtn.addEventListener('click', () => {\n  const list = document.querySelector('.score-list');\n  while (list.firstChild) {\n    list.removeChild(list.firstChild);\n  }\n  \n  const msg = document.querySelector('.msg');\n  msg.innerHTML = '';\n  (0,_module_get_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n});\n\n(0,_module_get_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_module_post_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/module/get.js":
+/*!***************************!*\
+  !*** ./src/module/get.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nasync function getData() {\n    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jFXCKqZ2A8LhRXmh0pbi/scores/');\n    const json = await response.json();\n    return json;\n  }\n  \n  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n    const list = document.querySelector('.score-list');\n    getData().then((json) => {\n      const array = json.result; \n      for (let i = 0; i < array.length; i += 1) {\n        list.innerHTML += `<li class=\"score\">${array[i].user} ${array[i].score}</li>`;\n      }\n    });\n  });\n  \n\n\n//# sourceURL=webpack://leaderboard/./src/module/get.js?");
+
+/***/ }),
+
+/***/ "./src/module/post.js":
+/*!****************************!*\
+  !*** ./src/module/post.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nasync function postData(user, score) {\n    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jFXCKqZ2A8LhRXmh0pbi/scores/', {\n      method: 'POST',\n      body: JSON.stringify({\n        user,\n        score,\n      }),\n      headers: {\n        'Content-type': 'application/json; charset=UTF-8',\n      },\n    });\n    const json = await response.json();\n    return json;\n  }\n  \n  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n    const msg = document.querySelector('.msg');\n    const form = document.querySelector('.add-form');\n    form.addEventListener('submit', (e) => {\n      e.preventDefault();\n      const user = form.elements[0].value;\n      const score = form.elements[1].value;\n      postData(user, score).then((json) => {\n        msg.innerHTML = json.result;\n        form.reset();\n      });\n    });\n  });\n  \n\n//# sourceURL=webpack://leaderboard/./src/module/post.js?");
 
 /***/ }),
 
