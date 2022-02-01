@@ -7,7 +7,7 @@ const refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', () => {
     const list = document.querySelector('.score-list');
 
-    while(list.firstChild) {
+    while (list.firstChild) {
         list.removeChild(list.firstChild);
     }
 
