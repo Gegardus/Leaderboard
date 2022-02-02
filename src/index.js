@@ -12,7 +12,7 @@ refreshBtn.addEventListener('click', () => {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  
+
   const msg = document.querySelector('.msg');
   msg.innerHTML = '';
   renderData();

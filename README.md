@@ -2,11 +2,11 @@
 
 # Leaderboard
 
-Leaderboard: setup project
+Leaderboard
 
 > This is a JavaScript project for the Leaderboard list app, using webpack and ES6 features.
 
-![screenshot](./src/assets/images/app_screenshot.png)
+![screenshot](./src/assets/images/app_screenshot_m.png)
 
 ## Built With
 
