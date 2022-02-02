@@ -10,7 +10,9 @@ export default () => {
   const list = document.querySelector('.score-list');
   getData().then((json) => {
     const array = json.result;
+
     array.sort((score1, score2) => score2.score - score1.score);
+    
     for (let i = 0; i < array.length; i += 1) {
       list.innerHTML += `<li class="score">${array[i].user} ${array[i].score}</li>`;
     }
